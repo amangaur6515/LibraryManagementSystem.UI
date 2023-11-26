@@ -1,0 +1,51 @@
+
+<div class="container">
+    <h3 class="text-center ">Signup</h3>
+    <div class="row">
+        <div class="col-6">
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class=" border shadow-lg mt-5 rounded-5 border" style="padding: 10%;">
+        
+                <div *ngFor="let e of errors">
+                    <p style="color: red;">{{e}}</p>
+                </div>
+                
+
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="name" class="form-control" placeholder="Enter your full name" formControlName="name" [class.is-invalid]="name.invalid && name.touched" >
+                    <div class="form-text text-danger" *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">Name is required</div>
+                    
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" placeholder="Email Address" formControlName="email" [class.is-invalid]="email.invalid && email.touched" >
+                    <div class="form-text text-danger" *ngIf="email.errors?.['required'] && (email.touched || email.dirty)">Email is required</div>
+                    <div class="form-text text-danger" *ngIf="email.errors?.['email'] && (email.touched || email.dirty)">Invalid email</div>
+                </div>
+                
+        
+                
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" type="password" class="form-control" placeholder="Password" formControlName="password">
+                    <div class="form-text text-danger" *ngIf="password.errors?.['required'] && (password.touched || password.dirty)">Password is required</div>
+                </div>
+                
+                
+                
+                
+                <button type="submit" [disabled]="signupForm.invalid" class="btn btn-primary mt-3">Submit</button>
+                        
+               
+        
+            </form>
+            
+
+        </div>
+        <div class="col-6">
+            <img src="https://www.skoolbeep.com/blog/wp-content/uploads/2020/12/HOW-DO-YOU-DESIGN-A-LIBRARY-MANAGEMENT-SYSTEM-min.png" alt="side-image" width="100%" height="400px">
+        </div>
+    </div>
+</div>
