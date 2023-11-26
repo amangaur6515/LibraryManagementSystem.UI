@@ -10,4 +10,14 @@ export class BookService {
 
   constructor(private http:HttpClient) { }
 
+  getBooks(){
+    return this.http.get(this.apiUrl+"Books");
+  }
+
+  getUserTokens(username:any){
+    return this.http.get(this.apiUrl+"TokensByUserId/"+username);
+  }
+  
+  }
+
 }

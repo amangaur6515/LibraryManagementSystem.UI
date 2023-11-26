@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/Services/auth.service';
+import { BookService } from 'src/app/Services/book.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,13 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  userTokens:any;
   loginForm=new FormGroup({
     username:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required]),
   });
 
-  constructor(private _authService:AuthService,private toastr: ToastrService,private _router: Router){}
+  constructor(private _authService:AuthService,private _bookService:BookService,private toastr: ToastrService,private _router: Router){}
 
   onSubmit(){
     //create the userobj
@@ -28,6 +30,7 @@ export class LoginComponent {
       this._authService.storeUsername(res.username);
       //notification
       this.toastr.success("Successfully Login","Lend-A-Read");
+      
       this._router.navigate(['/user-home'])
     },
     (error)=>{
@@ -37,9 +40,16 @@ export class LoginComponent {
 
   }
 
+  getUserTokens(){
+    const username=this._authService.getUsername();
+    this._bookService.getUserTokens(username).subscribe((res)=>{
+      this.userTokens=res;
+      console.log(res);
+    })
+  }
+
   get username(){
     return this.loginForm.controls.username;
- 
   }
   get password(){
     return this.loginForm.controls.password;

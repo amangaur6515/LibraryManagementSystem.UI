@@ -1,8 +1,9 @@
 
 <div class="container">
-    <h3 class="text-center ">Signup</h3>
+    
     <div class="row">
         <div class="col-6">
+            <h3 class="text-center ">Signup</h3>
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class=" border shadow-lg mt-5 rounded-5 border" style="padding: 10%;">
         
                 <div *ngFor="let e of errors">

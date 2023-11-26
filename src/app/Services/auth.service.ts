@@ -17,6 +17,7 @@ export class AuthService {
     return this.http.post(this.apiUrl+"Signup/",user)
   }
 
+  
   storeUsername(username:string){
     localStorage.setItem("username",username);
   }
@@ -27,5 +28,14 @@ export class AuthService {
   deleteUsername(){
     localStorage.removeItem("username");
   }
+
+  isLoggedIn(){
+    const username=localStorage.getItem("username");
+    if(username){
+      return true;
+    }
+    return false;
+  }
+
 
 }

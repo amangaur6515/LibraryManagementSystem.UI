@@ -3,11 +3,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { BookService } from 'src/app/Services/book.service';
 
 @Component({
-  selector: 'app-anonymous-home-page',
-  templateUrl: './anonymous-home-page.component.html',
-  styleUrls: ['./anonymous-home-page.component.css']
+  selector: 'app-user-home',
+  templateUrl: './user-home.component.html',
+  styleUrls: ['./user-home.component.css']
 })
-export class AnonymousHomePageComponent {
+export class UserHomeComponent {
   filteredItems:any=[];
   books:any=[];
   
@@ -40,6 +40,5 @@ export class AnonymousHomePageComponent {
     //this.cdRef.detectChanges();
 
   }
-  
 
 }
