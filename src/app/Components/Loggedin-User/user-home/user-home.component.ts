@@ -23,6 +23,7 @@ export class UserHomeComponent {
     this._bookService.getBooks().subscribe((res:any)=>{
       console.log(res)
       this.books=res;
+      
       //completely assign it to the filtered items array so that initially all books are displayed
       this.filteredItems=res;
       //now when the search term is entered filter from the books array and assign again to filtered items by calling update method

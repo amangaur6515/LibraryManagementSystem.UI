@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './Components/Anonymous-User/signup/signup.component';
 import { LoginComponent } from './Components/Anonymous-User/login/login.component';
@@ -14,6 +16,7 @@ import { UserHomeComponent } from './Components/Loggedin-User/user-home/user-hom
 import { BooksLendComponent } from './Components/Loggedin-User/books-lend/books-lend.component';
 import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowed/books-borrowed.component';
 import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
+import { BookDetailsComponent } from './Components/Loggedin-User/book-details/book-details.component';
 
 
 @NgModule({
@@ -26,6 +29,7 @@ import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.c
     BooksLendComponent,
     BooksBorrowedComponent,
     AddBookComponent,
+    BookDetailsComponent,
     
     
   ],
@@ -34,9 +38,11 @@ import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.c
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     CommonModule,
     BrowserAnimationsModule, 
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

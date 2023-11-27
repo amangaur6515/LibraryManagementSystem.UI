@@ -7,6 +7,7 @@ import { UserHomeComponent } from './Components/Loggedin-User/user-home/user-hom
 import { BooksLendComponent } from './Components/Loggedin-User/books-lend/books-lend.component';
 import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowed/books-borrowed.component';
 import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
+import { BookDetailsComponent } from './Components/Loggedin-User/book-details/book-details.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"user-home",component:UserHomeComponent},
   {path:"my-lend-books",component:BooksLendComponent},
   {path:"my-borrowed-books",component:BooksBorrowedComponent},
-  {path:"my-lend-books/add-book",component:AddBookComponent}
+  {path:"my-lend-books/add-book",component:AddBookComponent},
+  {path:"user-home/book-details/:id",component:BookDetailsComponent}
 ];
 
 @NgModule({

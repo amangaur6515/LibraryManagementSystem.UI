@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center align-items-center ">
+    <div class="card  p-1 shadow" style="width: 75rem;">
+      <div class="card-header bg-primary text-white">
+        <div class="row">
+            <div class="col-11 mt-1"><h3 class="card-title text-center">Book Details</h3></div>
+            <div class="col-1"><img width="50px" height="50px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvac_K2-8clhlResP0eDCVpRYSVbh0vuEMQQ&usqp=CAU" alt=""></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Book Name:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.name}}</span></h6></div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Author:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.author}}</span></h6></div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Genre:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.genre}}</span></h6></div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Lent By:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.lentByUserId}}</span></h6></div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Description:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.description}}</span></h6></div>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-3"><h4 class="card-title bold">Rating:</h4></div>
+                <div class="col-9"><h6><span style="color:blue">{{book.rating}}</span></h6></div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center mt-1">
+    <button class="btn btn-success">Borrow</button>
+  </div>
+  

@@ -35,7 +35,7 @@
                     <td>{{books.genre}}</td>
                     
                     <td>
-                        <button class="btn btn-primary">Details</button>
+                        <a [routerLink]="'book-details/'+books.id"><button class="btn btn-primary">Details</button></a>
                     </td>
                     
                 </tr>

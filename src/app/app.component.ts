@@ -13,16 +13,18 @@ export class AppComponent {
   title = 'BookBorrowingSystem.UI';
   userTokens:any;
   constructor(private _authService:AuthService,private _bookService:BookService,private route:Router,private toastr:ToastrService){
-    this.getUserTokens()
+    this.getUserTokens();
   }
 
   getUserTokens(){
-    const username=this._authService.getUsername();
+    const username=this._authService.getUsername()
     this._bookService.getUserTokens(username).subscribe((res)=>{
-      this.userTokens=res;
-    })
-    
+      this._bookService.storeUserToken(res)
+      this.userTokens=this._bookService.getUserToken();
+      console.log(this.userTokens)
+    });
   }
+
   get username(): string | null {
     
     return localStorage.getItem("username");
