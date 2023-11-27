@@ -11,6 +11,10 @@ import { CommonModule } from '@angular/common';
 import { ToastrModule } from 'ngx-toastr';
 import { AnonymousHomePageComponent } from './Components/Anonymous-User/anonymous-home-page/anonymous-home-page.component';
 import { UserHomeComponent } from './Components/Loggedin-User/user-home/user-home.component';
+import { BooksLendComponent } from './Components/Loggedin-User/books-lend/books-lend.component';
+import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowed/books-borrowed.component';
+import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { UserHomeComponent } from './Components/Loggedin-User/user-home/user-hom
     SignupComponent,
     LoginComponent,
     AnonymousHomePageComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    BooksLendComponent,
+    BooksBorrowedComponent,
+    AddBookComponent,
+    
     
   ],
   imports: [

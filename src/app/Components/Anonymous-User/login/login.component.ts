@@ -11,7 +11,7 @@ import { BookService } from 'src/app/Services/book.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  userTokens:any;
+ 
   loginForm=new FormGroup({
     username:new FormControl('',[Validators.required]),
     password:new FormControl('',[Validators.required]),
@@ -38,14 +38,6 @@ export class LoginComponent {
     })
 
 
-  }
-
-  getUserTokens(){
-    const username=this._authService.getUsername();
-    this._bookService.getUserTokens(username).subscribe((res)=>{
-      this.userTokens=res;
-      console.log(res);
-    })
   }
 
   get username(){
