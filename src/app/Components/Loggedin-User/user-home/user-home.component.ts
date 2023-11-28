@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NavigationExtras, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 import { BookService } from 'src/app/Services/book.service';
 
 @Component({
@@ -15,7 +17,7 @@ export class UserHomeComponent {
     searchTerm:new FormControl(''),
   });
 
-  constructor(private _bookService:BookService){
+  constructor(private _bookService:BookService,private _authService:AuthService,private route:Router){
     this.getBooks();
   }
 
@@ -41,5 +43,7 @@ export class UserHomeComponent {
     //this.cdRef.detectChanges();
 
   }
+
+  
 
 }

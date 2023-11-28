@@ -1,4 +1,4 @@
-
+<app-navbar></app-navbar>
 <h1 class="text-center mb-5 mt-3 table-bordered">My Borrowed Books</h1>
 <div class="container ">
     <table class="table table-striped table-bordered table-hover">
@@ -9,7 +9,8 @@
                 <th>Genre</th>
                 <th>Description</th>
                 <th>Rating</th>
-                <th>Purchased From</th>
+                <th>Borrowed From</th>
+                <th>Action</th>
                 
             </tr>
     
@@ -17,17 +18,8 @@
         </thead>
         <tbody>
             <ng-container *ngFor="let books of books">
-                <tr *ngIf="books.isAvailable==1" >
-                    <td>{{books.name}}</td>
-                    <td>{{books.author}}</td>
-                    <td>{{books.genre}}</td>
-                    <td>{{books.description}}</td>
-                    <td>{{books.rating}}</td>
-                    
-                    
-                    
-                </tr>
-                <tr *ngIf="books.isAvailable==0" >
+                
+                <tr  >
                     <td>{{books.name}}</td>
                     <td>{{books.author}}</td>
                     <td>{{books.genre}}</td>
@@ -35,6 +27,11 @@
                     <td>{{books.rating}}</td>
                     <td>
                         <h4 class="text-success">{{books.lentByUserId}}</h4>
+                    </td>
+                    <td>
+                        <Button class="btn btn-warning" (click)="returnBook(books)">
+                            Return
+                        </Button>
                     </td>
                     
                 </tr>

@@ -17,6 +17,7 @@ import { BooksLendComponent } from './Components/Loggedin-User/books-lend/books-
 import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowed/books-borrowed.component';
 import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
 import { BookDetailsComponent } from './Components/Loggedin-User/book-details/book-details.component';
+import { NavbarComponent } from './Components/Shared/navbar/navbar.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { BookDetailsComponent } from './Components/Loggedin-User/book-details/bo
     BooksBorrowedComponent,
     AddBookComponent,
     BookDetailsComponent,
+    NavbarComponent,
     
     
   ],

@@ -28,6 +28,7 @@ export class SignupComponent {
       username:this.signupForm.value.email,
       password:this.signupForm.value.password
     }
+    
     //call the service method
     this._authService.signup(user).subscribe((res:any)=>{
       console.log(res);

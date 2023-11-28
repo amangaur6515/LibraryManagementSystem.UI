@@ -1,10 +1,11 @@
+<app-navbar></app-navbar>
 <div class="container">
     <div class="row">
         <div class="col-10">
             <h3 class="text-center mb-5 mt-3 table-bordered">My Lend Books</h3>
         </div>
         <div class="col-2 mt-3">
-            <a routerLink="add-book"><button class="btn btn-primary">Add New Book +</button></a>
+            <a routerLink="/add-book"><button class="btn btn-primary">Add New Book +</button></a>
         </div>
     </div>
 </div>
@@ -19,6 +20,7 @@
                 <th>Genre</th>
                 <th>Description</th>
                 <th>Rating</th>
+                <th>PurchasedBy</th>
                 
             </tr>
     
@@ -32,6 +34,7 @@
                     <td>{{books.genre}}</td>
                     <td>{{books.description}}</td>
                     <td>{{books.rating}}</td>
+                    <td class="text-success"><h4>None</h4></td>
                     
                     
                     
@@ -43,7 +46,8 @@
                     <td>{{books.description}}</td>
                     <td>{{books.rating}}</td>
                     <td>
-                        <h4 class="text-danger">Unavailable!</h4>
+                       <h4 class="text-primary">{{books.borrowedByUserId}}</h4>
+                        
                     </td>
                     
                 </tr>

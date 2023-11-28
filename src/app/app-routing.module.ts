@@ -8,16 +8,17 @@ import { BooksLendComponent } from './Components/Loggedin-User/books-lend/books-
 import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowed/books-borrowed.component';
 import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
 import { BookDetailsComponent } from './Components/Loggedin-User/book-details/book-details.component';
+import { authGuard } from './Guards/auth.guard';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"",component:AnonymousHomePageComponent},
-  {path:"user-home",component:UserHomeComponent},
-  {path:"my-lend-books",component:BooksLendComponent},
-  {path:"my-borrowed-books",component:BooksBorrowedComponent},
-  {path:"my-lend-books/add-book",component:AddBookComponent},
-  {path:"user-home/book-details/:id",component:BookDetailsComponent}
+  {path:"user-home",component:UserHomeComponent,canActivate:[authGuard]},
+  {path:"my-lend-books",component:BooksLendComponent,canActivate:[authGuard]},
+  {path:"my-borrowed-books",component:BooksBorrowedComponent,canActivate:[authGuard]},
+  {path:"add-book",component:AddBookComponent,canActivate:[authGuard]},
+  {path:"user-home/book-details/:id",component:BookDetailsComponent,canActivate:[authGuard]}
 ];
 
 @NgModule({

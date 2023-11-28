@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="container">
     <div class="row">
         <div class="col-4">
@@ -35,7 +36,10 @@
                     <td>{{books.genre}}</td>
                     
                     <td>
-                        <a [routerLink]="'book-details/'+books.id"><button class="btn btn-primary">Details</button></a>
+                        <span>
+                        <a [routerLink]="'book-details/'+books.id"><button class="btn btn-primary"  >Details</button></a>
+                        
+                    </span>
                     </td>
                     
                 </tr>

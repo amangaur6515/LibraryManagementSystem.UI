@@ -18,6 +18,9 @@ export class BookService {
     return this.http.get(this.apiUrl+"Books");
   }
 
+  borrowBook(book:any){
+    return this.http.post(this.apiUrl+"BorrowBook",book)
+  }
   getBookById(id:number){
     return this.http.get(this.apiUrl+"BookById/"+id)
   }
@@ -39,6 +42,13 @@ export class BookService {
   getUserToken(){
     return this.userTokens;
   }
+
+  returnBook(bookObj:any){
+    return this.http.post(this.apiUrl+"ReturnBook",bookObj);
+  }
+
+  
+  
   
 
 }

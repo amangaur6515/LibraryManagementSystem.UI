@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="d-flex justify-content-center align-items-center ">
     <div class="card  p-1 shadow" style="width: 75rem;">
       <div class="card-header bg-primary text-white">
@@ -45,6 +46,8 @@
   </div>
   
   <div class="text-center mt-1">
-    <button class="btn btn-success">Borrow</button>
+    <p class="text-success" *ngIf="book.lentByUserId==getUserName()">User can't buy their added books</p>
+    <button [disabled]="book.lentByUserId==getUserName()" class="btn btn-success" (click)="borrowBook(book.id)">Borrow</button>
+    
   </div>
   
