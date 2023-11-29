@@ -7,6 +7,7 @@ import { AuthService } from './auth.service';
 })
 export class BookService {
   userTokens:any;
+  userToGetBooks:string='';
   private apiUrl="https://localhost:7244/api/Book/";
 
   constructor(private http:HttpClient,private _authService:AuthService) { }
@@ -47,7 +48,13 @@ export class BookService {
     return this.http.post(this.apiUrl+"ReturnBook",bookObj);
   }
 
-  
+  storeUserToGetBooks(username:string){
+    console.log(username)
+    this.userToGetBooks=username;
+  }
+  getBooksByStoredUser(){
+    return this.http.get(this.apiUrl+"BooksLentByUserId/"+this.userToGetBooks);
+  }
   
   
 

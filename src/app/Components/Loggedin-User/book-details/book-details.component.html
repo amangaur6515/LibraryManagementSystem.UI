@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="d-flex justify-content-center align-items-center ">
     <div class="card  p-1 shadow" style="width: 75rem;">
-      <div class="card-header bg-primary text-white">
+      <div class="card-header  text-white" style="background-color: #008080;">
         <div class="row">
             <div class="col-11 mt-1"><h3 class="card-title text-center">Book Details</h3></div>
             <div class="col-1"><img width="50px" height="50px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvac_K2-8clhlResP0eDCVpRYSVbh0vuEMQQ&usqp=CAU" alt=""></div>
@@ -26,7 +26,7 @@
             </div>
             <div class="row">
                 <div class="col-3"><h4 class="card-title bold">Lent By:</h4></div>
-                <div class="col-9"><h6><span style="color:blue">{{book.lentByUserId}}</span></h6></div>
+                <div class="col-9"><h6><span style="color:blue"><a routerLink="/books-by-user" (click)="storeUserToGetBooks(book.lentByUserId)">{{book.lentByUserId}}</a></span></h6></div>
                 <hr>
             </div>
             <div class="row">
@@ -46,8 +46,11 @@
   </div>
   
   <div class="text-center mt-1">
-    <p class="text-success" *ngIf="book.lentByUserId==getUserName()">User can't buy their added books</p>
+    <p class="text-danger" *ngIf="book.lentByUserId==getUserName()">User can't buy their added books</p>
     <button [disabled]="book.lentByUserId==getUserName()" class="btn btn-success" (click)="borrowBook(book.id)">Borrow</button>
     
   </div>
   
+  <footer class="container mt-3" >
+    <h4 style="background-color: teal; color: white;" class="text-center">Developed By Aman Gaur</h4>
+</footer>

@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(
+'../node_modules/bootstrap/dist/css/bootstrap.css'
+);
+body {
+
+    background: linear-gradient(to right,rgb(228, 244, 244), #ffffff);
+    animation: colorFade 5s infinite alternate; /* Adjust the duration as needed */
+  }
+
+  @keyframes colorFade {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }

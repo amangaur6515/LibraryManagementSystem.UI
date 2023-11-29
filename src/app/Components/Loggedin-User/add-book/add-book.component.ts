@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/Services/auth.service';
 import { BookService } from 'src/app/Services/book.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-book',
@@ -41,11 +42,19 @@ export class AddBookComponent {
       lentByUserId:username,
       borrowedByUserId:''
     }
+
     //call the service method and pass
     this._bookService.addBook(book).subscribe((res:any)=>{
-      console.log(res);
-      this.toastr.success('Successfully Added','Car Rental App')
+      Swal.fire({
+      icon: "success",
+      title: "<h4 style='color:blue';>"+book.name+"</h4>has been added successfully",
+      });
       this._router.navigate(['/my-lend-books'])
+    },(err)=>{
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong",
+        });
     })
   }
 

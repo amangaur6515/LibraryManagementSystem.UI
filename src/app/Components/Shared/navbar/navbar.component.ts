@@ -56,7 +56,7 @@ export class NavbarComponent {
         Swal.fire("Logged out! see you soon :)", "", "success");
         this.route.navigate([''])
       } else if (result.isDenied) {
-        Swal.fire("Continue reading", "", "info");
+        Swal.fire("Continue exploring our collection", "", "info");
       }
     });
     

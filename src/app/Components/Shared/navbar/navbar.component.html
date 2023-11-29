@@ -1,22 +1,23 @@
-<nav class="mx-3 navbar navbar-expand-lg navbar-light bg-light" >
+
+<nav class="mx-3 navbar navbar-expand-lg navbar-light bg-light sticky-top" >
     <a routerLink="/user-home" class="navbar-brand" > <img *ngIf="isLogin()" src="https://www.kindpng.com/picc/m/616-6169709_library-logo-of-a-person-holding-a-book.png" alt="logo" width="70px" height="70px"> </a>
     <a routerLink="" class="navbar-brand" > <img *ngIf="!isLogin()" src="https://www.kindpng.com/picc/m/616-6169709_library-logo-of-a-person-holding-a-book.png" alt="logo" width="70px" height="70px"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav mr-auto">
         
         <li class="nav-item" >
-            <a class="nav-link mx-5" routerLink="/login" *ngIf="!isLogin()"><b class="btn btn-primary">Login</b> </a>
+            <a class="nav-link mx-3" routerLink="/login" *ngIf="!isLogin()"><b class="btn btn-primary">Login</b> </a>
         </li>
       
-        <li class="nav-item">
+        <li class="nav-item mx-3">
             <a class="nav-link" routerLink="/signup" *ngIf="!isLogin()"><b class="btn btn-primary">Signup</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  *ngIf="isLogin()"><b style="color:blue">Hi! {{username}}</b></a>
+          <a class="nav-link"  *ngIf="isLogin()"><b style="color:#008080">Hi! {{username}}</b></a>
         </li>
         <li class="nav-item">
           <a class="nav-link mx-3"  *ngIf="isLogin()" routerLink="/user-home"><b >Home</b></a>
@@ -29,8 +30,8 @@
           <a class="nav-link mx-3"  *ngIf="isLogin()" routerLink="/my-borrowed-books"><b>My-Borrowed-Books</b></a>
         </li>
         
-        <li class="nav-item">
-          <b class="nav-link text-success  mx-3" *ngIf="isLogin()"><b>Your-Token: {{userTokens}}</b></b>
+        <li class="nav-item ">
+          <b class="nav-link text-success   mx-3" *ngIf="isLogin()"><b>Your-Token: {{userTokens}}</b></b>
         </li>
   
         

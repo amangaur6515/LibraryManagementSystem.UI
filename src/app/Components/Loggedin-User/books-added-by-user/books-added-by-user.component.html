@@ -1,12 +1,10 @@
 <app-navbar></app-navbar>
 <div class="container">
     <div class="row">
-        <div class="col-10">
-            <h3 class="text-center mb-5 mt-3 table-bordered" style="background-color: teal; color: white;">My Lend Books</h3>
+        <div class="col-12">
+            <h3 class="text-center mb-5 mt-3 table-bordered" style="background-color: teal; color: white;">Books added by user</h3>
         </div>
-        <div class="col-2 mt-3">
-            <a routerLink="/add-book"><button class="btn btn-primary">Add Book +</button></a>
-        </div>
+        
     </div>
 </div>
 
@@ -20,7 +18,7 @@
                 <th>Genre</th>
                 <th>Description</th>
                 <th>Rating</th>
-                <th>PurchasedBy</th>
+                
                 
             </tr>
     
@@ -34,7 +32,7 @@
                     <td>{{books.genre}}</td>
                     <td>{{books.description}}</td>
                     <td>{{books.rating}}</td>
-                    <td class="text-success"><h4>None</h4></td>
+                    
                     
                     
                     
@@ -45,10 +43,7 @@
                     <td>{{books.genre}}</td>
                     <td>{{books.description}}</td>
                     <td>{{books.rating}}</td>
-                    <td>
-                       <h4 class="text-primary">{{books.borrowedByUserId}}</h4>
-                        
-                    </td>
+                    
                     
                 </tr>
     
@@ -60,7 +55,7 @@
     </table>
 
 </div>
-<footer class="container " style="margin-top: 300px;" >
+<footer class="container " style="margin-top: 290px;" >
     <h6 style="background-color: teal; color: white;" class="text-center">Developed By Aman Gaur</h6>
 </footer>
 

@@ -9,6 +9,8 @@ import { BooksBorrowedComponent } from './Components/Loggedin-User/books-borrowe
 import { AddBookComponent } from './Components/Loggedin-User/add-book/add-book.component';
 import { BookDetailsComponent } from './Components/Loggedin-User/book-details/book-details.component';
 import { authGuard } from './Guards/auth.guard';
+import { WildCardComponent } from './Components/Shared/wild-card/wild-card.component';
+import { BooksAddedByUserComponent } from './Components/Loggedin-User/books-added-by-user/books-added-by-user.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path:"my-lend-books",component:BooksLendComponent,canActivate:[authGuard]},
   {path:"my-borrowed-books",component:BooksBorrowedComponent,canActivate:[authGuard]},
   {path:"add-book",component:AddBookComponent,canActivate:[authGuard]},
-  {path:"user-home/book-details/:id",component:BookDetailsComponent,canActivate:[authGuard]}
+  {path:"user-home/book-details/:id",component:BookDetailsComponent,canActivate:[authGuard]},
+  {path:"books-by-user",component:BooksAddedByUserComponent,canActivate:[authGuard]},
+  {path:"**",component:WildCardComponent}
 ];
 
 @NgModule({

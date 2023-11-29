@@ -35,32 +35,50 @@ export class BookDetailsComponent {
       borrowedByUserId:user,
       lentByUserId:this.book.lentByUserId
     }
-    this._bookService.borrowBook(book).subscribe((res)=>{
-      Swal.fire({
-        icon:"success",
-        title: "Book borrowed successfully",
-        text: "Enjoy Reading",
-        imageUrl: "https://st5.depositphotos.com/10614052/67676/i/450/depositphotos_676769868-stock-photo-open-old-book-wooden-background.jpg",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Book image"
-      });
-      
-      this._route.navigate(['my-borrowed-books'])
-    },(err)=>{
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Insufficient Tokens",
-        footer: 'Atleast 1 token is required in order to borrow any book'
-      });
-
-    })
+    Swal.fire({
+      title: "Borrow this book in exchange of 1 token?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Borrow",
+      denyButtonText: `Review`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        this._bookService.borrowBook(book).subscribe((res)=>{
+          Swal.fire({
+            icon:"success",
+            title: "Book borrowed successfully",
+            text: "Enjoy Reading",
+            imageUrl: "https://st5.depositphotos.com/10614052/67676/i/450/depositphotos_676769868-stock-photo-open-old-book-wooden-background.jpg",
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: "Book image"
+          });
+          
+          this._route.navigate(['my-borrowed-books'])
+        },(err)=>{
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Insufficient Tokens",
+            footer: 'Atleast 1 token is required in order to borrow any book'
+          });
+    
+        })
+      } else if (result.isDenied) {
+        Swal.fire("Continue exploring our collection", "", "info");
+      }
+    });
+    
 
   }
 
   getUserName(){
     return this._authService.getUsername()
+  }
+
+  storeUserToGetBooks(username:string){
+    this._bookService.storeUserToGetBooks(username);
   }
   
 }

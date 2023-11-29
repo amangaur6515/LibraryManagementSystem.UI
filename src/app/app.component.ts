@@ -3,6 +3,7 @@ import { AuthService } from './Services/auth.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BookService } from './Services/book.service';
+import 'node_modules/bootstrap/dist/js/bootstrap.js'
 
 @Component({
   selector: 'app-root',
